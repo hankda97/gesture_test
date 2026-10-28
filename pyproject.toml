@@ -1,0 +1,24 @@
+[project]
+name = "gesture-detection"
+version = "0.1.0"
+description = "A Render-ready hand gesture detection API"
+readme = "README.md"
+authors = [
+    { name = "lymiao99", email = "lymiao99@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115,<1.0",
+    "mediapipe>=0.10,<1.0",
+    "numpy>=1.26,<3.0",
+    "opencv-python-headless>=4.10,<5.0",
+    "python-multipart>=0.0.9,<1.0",
+    "uvicorn[standard]>=0.30,<1.0",
+]
+
+[project.scripts]
+prooo = "prooo:main"
+
+[build-system]
+requires = ["uv_build>=0.13.3,<0.14.0"]
+build-backend = "uv_build"

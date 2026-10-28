@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>手勢相簿｜Gesture Gallery</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✦</span><span>GESTURE GALLERY</span></div>
+      <span class="status"><i id="status-dot"></i><span id="status-text">尚未啟用攝影機</span></span>
+    </header>
+
+    <section class="hero">
+      <p class="kicker">LIVE HAND CONTROL</p>
+      <h1>用手勢，<em>翻閱</em>你的影像。</h1>
+      <p class="subtitle">開啟攝影機，讓手掌成為你的遙控器。</p>
+    </section>
+
+    <section class="workspace">
+      <article class="camera-panel panel">
+        <div class="panel-heading"><span>CAMERA / 即時畫面</span><span id="gesture-label">等待手勢</span></div>
+        <div class="camera-frame">
+          <video id="camera" autoplay playsinline muted></video>
+          <canvas id="landmarks"></canvas>
+          <div class="camera-placeholder" id="camera-placeholder"><span class="camera-icon">◉</span><span>按下按鈕開始使用攝影機</span></div>
+        </div>
+        <button class="primary-button" id="camera-button">啟用攝影機</button>
+      </article>
+
+      <article class="gallery-panel panel">
+        <div class="panel-heading"><span>GALLERY / 圖片展示</span><span id="counter">1 / 5</span></div>
+        <div class="image-stage"><img id="gallery-image" src="/static/images/slide-1.svg" alt="展示圖片" /></div>
+        <div class="caption"><div><span class="caption-label">NOW VIEWING</span><h2 id="image-title">Dawn Signal</h2></div><span class="arrow">↗</span></div>
+        <div class="controls"><button class="control-button" id="prev-button">← <span>上一張</span></button><button class="control-button" id="next-button"><span>下一張</span> →</button></div>
+      </article>
+    </section>
+
+    <section class="instructions panel">
+      <div><p class="kicker">GESTURE GUIDE</p><h2>你的手勢控制</h2><p class="guide-note">支援雙手辨識；手背出現時圖片會左右翻轉。</p></div>
+      <div class="gesture-list">
+        <div><b>← →</b><span>手掌左右移動<br><small>上一張 / 下一張</small></span></div>
+        <div><b>☝</b><span>伸出食指<br><small>回到第一張</small></span></div>
+        <div><b>🤙</b><span>伸出小指<br><small>跳到最後一張</small></span></div>
+      </div>
+    </section>
+    <footer><span>Gesture Detection · Browser-side vision</span><a href="/docs">API 文件 ↗</a></footer>
+  </main>
+  <script type="module" src="/static/app.js"></script>
+</body>
+</html>
